@@ -1,0 +1,37 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.gana {
+  background-color: v.$primario;
+  padding: 5rem 0;
+  @include m.tablet {
+    &__grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      align-items: center;
+      gap: 5rem;
+    }
+  }
+
+  &__imagen {
+    margin: 0 auto;
+    transition-property: transform;
+    transition-duration: 300ms;
+    &:hover {
+      transform: rotate(8deg) scale(1.1);
+    }
+  }
+  &__heading {
+    text-align: center;
+    @include m.tablet {
+      text-align: left;
+    }
+    @include m.headingBorder(v.$secundario, v.$blanco);
+  }
+  &__texto {
+    @include m.tablet {
+      text-align: left;
+    }
+    text-align: center;
+  }
+}

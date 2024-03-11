@@ -1,0 +1,13 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.planes {
+  padding: 10rem 0;
+  &__heading {
+    @include m.headingBorder(v.$blanco, v.$primario);
+  }
+  background-color: v.$secundario;
+  &__texto {
+    color: v.$blanco;
+  }
+}

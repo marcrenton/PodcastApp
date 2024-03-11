@@ -1,0 +1,60 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.testimoniales {
+  padding: 5rem 0;
+
+  @include m.tablet {
+    @include m.grid(3, 5rem);
+    align-items: center;
+    &__imagen {
+      grid-column: 1/2;
+    }
+    &__contenido {
+      grid-column: 2/4;
+      padding: 5rem 0;
+    }
+  }
+  &__heading {
+    @include m.headingBorder(v.$secundario, v.$primario);
+  }
+
+  &__texto {
+    border: thick solid v.$secundario;
+    border-radius: 1rem;
+    background-color: v.$primario;
+    margin-bottom: 4rem;
+    padding: 2rem;
+    position: relative;
+    @include m.tablet {
+      max-width: 60%;
+      &:nth-child(2) {
+        margin-left: 10%;
+      }
+      &:nth-child(3) {
+        margin-left: 20%;
+      }
+
+      &:nth-child(4) {
+        margin-left: 30%;
+      }
+    }
+    &:last-of-type {
+      margin-bottom: 0rem;
+    }
+    &::before {
+      content: "";
+      display: block;
+      width: 5rem;
+      height: 5rem;
+      background-image: url(../img/comilla.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      position: absolute;
+    }
+  }
+  &__parrafo {
+    margin: 0;
+    padding-left: 6rem;
+  }
+}
